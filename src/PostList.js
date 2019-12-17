@@ -32,11 +32,11 @@ class PostList extends React.Component {
         });
     }   
 
-    // rendering
+    // renderingg
     render(){
         return (
             <div>
-                <div className="nav">Posts</div>
+                <div className="nav">Pogsts</div>
                 <div className="post-list">
                     {this.state.posts.map((a) => {
                         return (
