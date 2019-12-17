@@ -9,31 +9,28 @@ class PostList extends React.Component {
         super(props);
         this.state = {
             posts : []
+                
+
         }
     }
-
-    // events
     componentDidMount(){
-
-        fetch(
-            "https://cdn.oneshop.cloud/lesson5_api_3.json",
-            {
-                method : "GET"
-            }
-        )
+        fetch('https://cdn.oneshop.cloud/lesson5_api_3.json',
+        {
+            method : 'get'
+        }
+       )
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            // set it to state
-            this.setState({posts : data});
+            this.setState({
+                posts : data
+            });
         })
         .catch((error) => {
             console.log(error);
         });
-
-    }
-
+    }   
 
     // rendering
     render(){
@@ -42,26 +39,10 @@ class PostList extends React.Component {
                 <div className="nav">Posts</div>
                 <div className="post-list">
                     {this.state.posts.map((a) => {
-                        /*
-                            {
-                                "title" : "orhgowrhg",
-                                "description" : "wrwrgg",
-                                "thumbnail" : "rwgwrgwgr"
-                            }
-
-                            {
-                                "id": 3434,
-                                "content" : {
-                                    "title" : "orhgowrhg",
-                                    "description" : "wrwrgg",
-                                    "thumbnail" : "rwgwrgwgr"
-                                }
-                            }
-                        */
                         return (
                             <Post 
-                                title={a.post.content.title} 
-                                description={a.post.content.description}
+                                title={a.content.title} 
+                                description={a.description}
                                 thumbnail={a.post.image.thumbnail}
                             /> 
                         );

@@ -15,6 +15,10 @@
     font-weight: 500;
 }
 
+.info {
+    padding: 5px 0px;
+}
+
 .post-list {
     display: flex;
     flex-direction: row;
