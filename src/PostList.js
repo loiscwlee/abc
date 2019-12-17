@@ -14,7 +14,7 @@ class PostList extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('https://cdn.oneshop.cloud/lesson5_api_3.json',
+        fetch('https://cdn.oneshop.cloud/lesson5_api_2.json',
         {
             method : 'get'
         }
@@ -42,8 +42,8 @@ class PostList extends React.Component {
                         return (
                             <Post 
                                 title={a.content.title} 
-                                description={a.description}
-                                thumbnail={a.post.image.thumbnail}
+                                description={a.content.description}
+                                thumbnail={a.content.thumbnail}
                             /> 
                         );
                     })}
